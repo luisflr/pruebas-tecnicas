@@ -1,5 +1,4 @@
-import { ping, obtenerDatosPromise } from "../solutions/index.js";
-// import { ping, obtenerDatosPromise, procesarArchivoPromise, procesarArchivo, leerArchivos } from "../solutions/index.js";
+import { ping, obtenerDatosPromise, procesarArchivo, procesarArchivoPromise, leerArchivos } from "../solutions/index.js";
 
 import { describe, it, beforeEach, afterEach } from 'node:test'
 import { equal, ifError } from 'node:assert/strict'
@@ -24,41 +23,41 @@ describe('2. obtenerDatosPromise', () => {
   })
 })
 
-// describe('3. procesarArchivoPromise', () => {
-//   afterEach(() => {
-//     try {
-//       unlinkSync('output.txt')
-//     } catch {}
-//   })
+describe('3. procesarArchivoPromise', () => {
+  afterEach(() => {
+    try {
+      unlinkSync('output.txt')
+    } catch {}
+  })
 
-//   it('3.1. procesarArchivo', (t, done) => {
-//     writeFileSync('input.txt', 'gogogo')
-//     procesarArchivo((err) => {
-//       ifError(err)
-//       readFile('output.txt', 'utf8')
-//         .then((contenido) => {
-//           equal(contenido, 'GOGOGO')
-//           done()
-//         })
-//     })
-//   })
+  it('3.1. procesarArchivo', (t, done) => {
+    writeFileSync('input.txt', 'gogogo')
+    procesarArchivo((err) => {
+      ifError(err)
+      readFile('output.txt', 'utf8')
+        .then((contenido) => {
+          equal(contenido, 'GOGOGO')
+          done()
+        })
+    })
+  })
 
-//   // it('3.1. procesarArchivoPromise', async () => {
-//   //   writeFileSync('input.txt', 'hola')
-//   //   await procesarArchivoPromise()
-//   //   const contenido = await readFile('output.txt', 'utf8')
-//   //   equal(contenido, 'HOLA')
-//   // })
-// })
+  it('3.2. procesarArchivoPromise', async () => {
+    writeFileSync('input.txt', 'hola')
+    await procesarArchivoPromise()
+    const contenido = await readFile('output.txt', 'utf8')
+    equal(contenido, 'HOLA')
+  })
+})
 
-// describe('4. leerArchivos', () => {
-//   // it('4.1. leerArchivos', () => {
-//   //   const mensaje = leerArchivos()
-//   //   equal(mensaje, 'hola qué tal')
-//   // })
+describe('4. leerArchivos', () => {
+  it('4.1. leerArchivos', async () => {
+    const mensaje = await leerArchivos()
+    equal(mensaje, 'hola qué tal')
+  })
 
-//   it('4.1. leerArchivos', async () => {
-//     const mensaje = await leerArchivos()
-//     equal(mensaje, 'hola qué tal')
-//   })
-// })
+  it('4.2. leerArchivos', async () => {
+    const mensaje = await leerArchivos()
+    equal(mensaje, 'hola qué tal')
+  })
+})

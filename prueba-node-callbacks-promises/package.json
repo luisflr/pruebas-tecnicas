@@ -1,7 +1,7 @@
 {
   "name": "pruebas-tecnicas",
   "version": "1.0.0",
-  "description": "",
+  "description": "Prueba técnica sacada de midudev",
   "main": "index.js",
   "module": "index.ts",
   "type": "module",
@@ -15,6 +15,6 @@
     "express": "4.18.2"
   },
   "keywords": [],
-  "author": "",
+  "author": "Luis Gonzalo Flores Rodriguez",
   "license": "ISC"
 }

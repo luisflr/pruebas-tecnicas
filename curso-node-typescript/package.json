@@ -4,7 +4,9 @@
   "description": "Curso de node con typescript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc && node dist/server.js",
+    "dev": "nodemon"
   },
   "keywords": [],
   "author": "Luis Gonzalo Flores Rodriguez",

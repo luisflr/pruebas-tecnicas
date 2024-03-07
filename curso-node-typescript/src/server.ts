@@ -1,4 +1,4 @@
-import express from "express";
+import express, { json } from "express";
 import morgan from "morgan";
 import cors from "cors";
 
@@ -11,6 +11,17 @@ class Server {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(morgan('dev'));
     this.app.use(cors());
+
+    this.app.get('/', (req, res) => {
+      res.status(200).send('<h1> Hola mundo </h1>')
+    })
+
+    this.app.get('/api/v1', (req, res) => {
+      res.status(200).json({
+        message: 'Hola mundo'
+      })
+    })
+
     this.listen();
   }
 

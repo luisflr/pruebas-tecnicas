@@ -1,5 +1,6 @@
 import { Router } from "express";
 
+// Aqui se aplica el patron Factory Method
 export class BaseRoutes<T> {
   public router: Router;
   public controller: T;

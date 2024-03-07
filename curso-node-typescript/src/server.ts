@@ -15,7 +15,7 @@ class Server {
   }
 
   public listen() {
-    return this.app.listen(this.port, () => {
+    this.app.listen(this.port, () => {
       console.log('Servidor escuchando en el puerto 8000')
     });
   }

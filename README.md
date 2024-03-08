@@ -1,1 +1,1 @@
-# # Pruebas técnicas de javascript para juniors
+# # Pruebas técnicas de javascript

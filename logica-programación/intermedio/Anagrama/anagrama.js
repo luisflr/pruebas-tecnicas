@@ -1,4 +1,7 @@
-const anagrama = (firstWord, secondWord) => {
+// ------------------------------------------------------------------------------------------------------
+// THIS IS DE FIRST SOLUTION WITHOUT SORT METHOD
+// ------------------------------------------------------------------------------------------------------
+const anagramaFirstSolution = (firstWord, secondWord) => {
   if ( typeof firstWord !== 'string' || typeof secondWord !== 'string') {
     return console.log('Las dos palabras debe ser string');
   }
@@ -33,5 +36,22 @@ const validations = (firstWord, secondWord) => {
   return true
 }
 
+anagramaFirstSolution('Toledo','El todo')
 
-anagrama('Toledo','El todo')
+// ------------------------------------------------------------------------------------------------------
+// THIS IS DE SECOND SOLUTION USING SORT METHOD
+// ------------------------------------------------------------------------------------------------------
+
+const anagramaSecondSolution = (firstWord, secondWord) => {
+  if (firstWord === secondWord) {
+    console.log('No es un anagrama')
+    return
+  }
+  const formatedFirstWord = firstWord.replaceAll(' ', '').toLowerCase().split('').sort().join('')
+  const formatedSecondWord = secondWord.replaceAll(' ', '').toLowerCase().split('').sort().join('')
+  
+  formatedFirstWord === formatedSecondWord ? console.log('Es un anagrama') : console.log('No es un anagrama')
+}
+
+
+anagramaSecondSolution('Toledo','El todo')

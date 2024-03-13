@@ -5,11 +5,10 @@ abstract class Poligon {
   abstract area(): {}
 }
 
-class Square extends Poligon {
+class Square implements Poligon {
   private side: number;
   
   constructor(side: number) {
-    super()
     this.side = side;
   }
 
@@ -18,12 +17,11 @@ class Square extends Poligon {
   }
 }
 
-class Triangle extends Poligon {
+class Triangle implements Poligon {
   private width: number;
   private height: number;
   
   constructor(width: number, height: number) {
-    super()
     this.width = width;
     this.height = height
   }
@@ -33,12 +31,11 @@ class Triangle extends Poligon {
   }
 }
 
-class Rectangle extends Poligon {
+class Rectangle implements Poligon {
   private width: number;
   private height: number;
   
   constructor(width: number, height: number) {
-    super()
     this.width = width;
     this.height = height
   }
@@ -48,11 +45,10 @@ class Rectangle extends Poligon {
   }
 }
 
-class Circle extends Poligon {
+class Circle implements Poligon {
   private radio: number;
   
   constructor(radio: number) {
-    super()
     this.radio = radio;
   }
 
@@ -61,11 +57,8 @@ class Circle extends Poligon {
   }
 }
 
-const square = new Square(2)
-const rectangle = new Rectangle(2,3)
-const triangle = new Triangle(4,5)
-const circle = new Circle(3)
-console.log('The area of square is', square.area())
-console.log('The area of rectangle is', rectangle.area())
-console.log('The area of triangle is', triangle.area())
-console.log('The area of circle is', circle.area())
+const getArea = (poligon: Poligon) =>{
+  console.log(poligon.area())
+}
+
+getArea(new Circle(2))

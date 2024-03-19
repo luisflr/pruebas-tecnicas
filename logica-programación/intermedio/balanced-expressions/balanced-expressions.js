@@ -1,5 +1,4 @@
 
-// ,')',']','}'
 const balanceExpressionValidator = (expression) => {
   const openDelimiters = ['{','[','(']
   const formatedExpression = expression.replaceAll(' ', '')

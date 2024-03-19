@@ -6,5 +6,5 @@ de una expresión están equilibrados.
   en orden y de forma correcta.
 - Paréntesis, llaves y corchetes son igual de prioritarios.
   No hay uno más importante que otro.
-- Expresión balanceada: { [ a * ( c + d ) ] - 5 }
-- Expresión no balanceada: { a * ( c + d ) ] - 5 }
+- Expresión balanceada: {[()]}
+- Expresión no balanceada: {()]}

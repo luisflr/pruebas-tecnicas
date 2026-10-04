@@ -1,22 +1,22 @@
 function checkValidString(s: string): boolean {
-  let minOpen = 0;
-  let maxOpen = 0;
+  let startParenthesis = 0;
+  let endParenthesis = 0;
 
-  for (const char of s) {
-    if (char === "(") {
-      minOpen++;
-      maxOpen++;
-    } else if (char === ")") {
-      minOpen--;
-      maxOpen--;
+  for (let i = 0; i < s.length; i++) {
+    if (s[i] == "(") {
+      startParenthesis++;
+      endParenthesis++;
+    } else if (s[i] == ")") {
+      startParenthesis--;
+      endParenthesis--;
     } else {
-      minOpen--;
-      maxOpen++;
+      startParenthesis--;
+      endParenthesis++;
     }
 
-    if (maxOpen < 0) return false;
-
-    if (minOpen < 0) minOpen = 0;
+    if (endParenthesis < 0) return false;
+    if (startParenthesis < 0) startParenthesis = 0;
   }
-  return minOpen === 0;
+
+  return startParenthesis == 0;
 }
